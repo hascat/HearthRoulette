@@ -1,0 +1,20 @@
+## Title: HearthRoulette
+## Notes: Hearth using a random Hearthstone toy!
+## X-Website: https://github.com/hascat/HearthRoulette
+## X-License: MIT
+## X-Category: Miscellaneous
+## X-Localizations: enUS
+
+## Interface: 80300
+## Version: v0.1
+
+## Author: Hascat
+## X-Author-Server: US-Cairne
+## X-Author-Faction: Horde
+
+## DefaultState: Enabled
+## LoadOnDemand: 0
+
+Addon.lua
+Data.lua
+Events.lua

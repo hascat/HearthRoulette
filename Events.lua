@@ -30,16 +30,13 @@ end
 -- updated, then choose a new hearthstone. This ensures the hearthstone item
 -- will not be erroneously used if it is removed from the player's bags.
 function events:BAG_UPDATE(event, bagId)
-    addon:UpdateBags()
-    addon:ChooseHearthstone()
+    addon:UpdateItems()
 end
 
 -- Ensure the toys and items have been scanned when the player enters the world,
 -- then update the chosen hearthstone.
 function events:PLAYER_ENTERING_WORLD(event)
-    addon:UpdateToys()
-    addon:UpdateBags()
-    addon:ChooseHearthstone()
+    addon:UpdateAll()
 end
 
 -- Look for hearthstone toys in the player's toy collection, then choose a new
@@ -47,13 +44,12 @@ end
 -- soon as they are added to the player's collection.
 function events:TOYS_UPDATED(event, toyId, isNew, hasFanfare)
     addon:UpdateToys()
-    addon:ChooseHearthstone()
 end
 
 -- Choose a new hearthstone each time the player casts a spell. This ensures
 -- repeated use of the macro results in randomly-chosen hearthstones.
 function events:UNIT_SPELLCAST_START(event, unitTarget, castGUID, spellId)
     if unitTarget == "player" then
-        addon:ChooseHearthstone()
+        addon:ChooseHearth()
     end
 end

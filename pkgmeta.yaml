@@ -1,6 +1,7 @@
 enable-nolib-creation: no
 
 ignore:
-	- .pkgmeta
+	- pkgmeta.yaml
+    - assets/HearthRoulette.xcf
 
 package-as: HearthRoulette

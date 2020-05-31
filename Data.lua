@@ -7,7 +7,7 @@ addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
 -- Item ID for the standard hearthstone item.
 addon.HEARTHSTONE_ITEM_ID = 6948
 
--- Toy ID numbers for the various hearthstone toys.
+-- Toy ID numbers for the hearthstone-equivalent toys.
 addon.HEARTHSTONE_TOY_ID = {
     142542, -- Tome of Town Portal
 	172179, -- Eternal Traveler's Hearthstone
@@ -19,4 +19,9 @@ addon.HEARTHSTONE_TOY_ID = {
     165669, -- Lunar Edler's Hearthstone
 	165802, -- Noble Gardener's Hearthstone
 	165670, -- Peddlefeet's Lovely Hearthstone
+}
+
+-- Spell ID numbers for hearthstone-equivalent spells.
+addon.HEARTHSTONE_SPELL_ID = {
+	556, -- Astral Recall
 }

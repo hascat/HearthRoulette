@@ -7,6 +7,7 @@ local addonName, addon = ...
 
 -- Initialize addon state.
 addon.eligibleItems = {}
+addon.eligibleSpells = {}
 addon.eligibleToys = {}
 addon.hasFavorites = false
 
@@ -19,12 +20,14 @@ local function RandomItem(t)
 	end
 end
 
--- Randomly choose a hearthstone from the lists of eligible toys and items. The
+-- Randomly choose a hearthstone from the lists of eligible toys, spells, and items. The
 -- chosen hearthstone will be used in the generated macro.
 function addon:ChooseHearth()
 	local castName = nil
 	if #self.eligibleToys > 0 then
 		castName = RandomItem(self.eligibleToys)
+	elseif #self.eligibleSpells > 0 then
+		castName = RandomItem(self.eligibleSpells)
 	else
 		castName = RandomItem(self.eligibleItems)
 	end
@@ -35,6 +38,7 @@ end
 -- Update the set of hearth items and toys available, then choose a new hearth.
 function addon:UpdateAll()
 	self:_UpdateToys()
+	self:_UpdateSpells()
 	self:_UpdateItems()
 	self:ChooseHearth()
 end
@@ -42,6 +46,12 @@ end
 -- Update the set of hearth items available, then choose a new hearth.
 function addon:UpdateItems()
 	self:_UpdateItems()
+	self:ChooseHearth()
+end
+
+-- Update the set of hearth toys available, then choose a new random hearth.
+function addon:UpdateSpells()
+	self:_UpdateSpells()
 	self:ChooseHearth()
 end
 
@@ -82,9 +92,21 @@ function addon:_UpdateMacro(castName)
 	end
 
 	if not name then
-		CreateMacro(addonName, addon.MACRO_ICON_ID, body, false)
+		CreateMacro(addonName, self.MACRO_ICON_ID, body, false)
 	else
-		EditMacro(addonName, addonName, addon.MACRO_ICON_ID, body)
+		EditMacro(addonName, addonName, self.MACRO_ICON_ID, body)
+	end
+end
+
+-- Populate a set of all known hearthstone spells.
+function addon:_UpdateSpells()
+	wipe(self.eligibleSpells)
+
+	for _, spellId in pairs(self.HEARTHSTONE_SPELL_ID) do
+		if IsPlayerSpell(spellId) then
+			local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
+			table.insert(self.eligibleSpells, spellName)
+		end
 	end
 end
 
@@ -94,7 +116,7 @@ function addon:_UpdateToys()
 	wipe(self.eligibleToys)
 	self.hasFavorites = false
 	
-	for _, toyId in pairs(addon.HEARTHSTONE_TOY_ID) do
+	for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
 		if PlayerHasToy(toyId) then
 			local _, toyName, _, isFavorite, _, _ = C_ToyBox.GetToyInfo(toyId)
 			if isFavorite then

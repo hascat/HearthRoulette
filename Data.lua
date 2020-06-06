@@ -1,7 +1,7 @@
 local addonName, addon = ...
 
 -- Path to the icon to use for the macro.
-addon.MACRO_ICON_PATH = "Interface/addons/HearthRoulette/assets/HearthRoulette.blp"
+addon.MACRO_ICON_PATH = "Interface/icons/achievement_guildperk_hastyhearth.blp"
 addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
 
 -- Item ID for the standard hearthstone item.

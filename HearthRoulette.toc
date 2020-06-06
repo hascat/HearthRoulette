@@ -6,7 +6,7 @@
 ## X-Localizations: enUS
 
 ## Interface: 80300
-## Version: v0.2.1
+## Version: v0.3
 
 ## Author: Hascat
 ## X-Author-Server: US-Cairne

@@ -80,8 +80,13 @@ function addon:_UpdateItems()
 end
 
 -- Update the macro to use the given hearthstone toy or item. If the macro does
--- not yet exist, it will be created for the current character.
+-- not yet exist, it will be created for the current character. If the player is
+-- in combat, no action is taken.
 function addon:_UpdateMacro(castName)
+    if InCombatLockdown() then
+        return
+    end
+
     local name, _, _, _ = GetMacroInfo(addonName)
 
     local body = nil

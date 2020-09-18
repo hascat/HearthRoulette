@@ -3,6 +3,7 @@ enable-nolib-creation: no
 ignore:
     - pkgmeta.yaml
     - assets/HearthRoulette.blp
+    - assets/HearthRoulette.png
     - assets/HearthRoulette.xcf
 
 package-as: HearthRoulette

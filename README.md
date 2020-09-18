@@ -1,8 +1,42 @@
 # HearthRoulette
 
 This addon creates a "HearthRoulette" macro which will use a random
-hearthstone-equivalent toy, a hearthstone-equivalent spell (e.g. Astral Recall)
-or a hearthstone, if it exists in the player's inventory. If any of the player's
-hearthstone toys are marked as favorites, the random selection will be made only
-from those toys. The macro is updated with a new random selection each time it
-is used.
+hearthstone-equivalent toy, spell, or item. The macro is updated with a new
+random selection each time it is used.
+
+## Toys
+
+The random selection will be made from one of the following toys:
+
+- [Brewfest Reveler's Hearthstone](https://www.wowhead.com/item=166747/brewfest-revelers-hearthstone)
+- [Dark Portal](https://www.wowhead.com/item=93672/dark-portal)
+- [Eternal Traveler's Hearthstone](https://www.wowhead.com/item=172179/eternal-travelers-hearthstone)
+- [Ethereal Portal](https://www.wowhead.com/item=54452/ethereal-portal)
+- [Fire Eater's Hearthstone](https://www.wowhead.com/item=166746/fire-eaters-hearthstone)
+- [Greatfather Winter's Hearthstone](https://www.wowhead.com/item=162973/greatfather-winters-hearthstone)
+- [Headless Horseman's Hearthstone](https://www.wowhead.com/item=163045/headless-horsemans-hearthstone)
+- [Holographic Digitalization Hearthstone](https://www.wowhead.com/item=168907/holographic-digitalization-hearthstone)
+- [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
+- [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
+- [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
+- [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
+
+If any of the above toys are marked as favorites, the random selection will be
+made only from those toys.
+
+## Spells
+
+If the player does not possess any of the above toys and is a Shaman, the
+following spell will be cast:
+
+- [Astral Recall](https://www.wowhead.com/spell=556/astral-recall)
+
+## Items
+
+If the player does not possess any of the above toys and is not a Shaman, the
+random selection will be made from one of the following items, if the player has
+them available:
+
+- [Astonishingly Scarlet Slippers](https://www.wowhead.com/item=142298/astonishingly-scarlet-slippers)
+- [Hearthstone](https://www.wowhead.com/item=6948/hearthstone)
+- [Ruby Slippers](https://www.wowhead.com/item=28585/ruby-slippers)

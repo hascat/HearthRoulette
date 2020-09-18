@@ -71,8 +71,8 @@ function addon:_UpdateItems()
     for bagId = BACKPACK_CONTAINER, NUM_BAG_SLOTS do
         for slot = 1, GetContainerNumSlots(bagId) do
             local itemId = GetContainerItemID(bagId, slot)
-            if itemId == self.HEARTHSTONE_ITEM_ID then
-                local castName = C_Item.GetItemNameByID(self.HEARTHSTONE_ITEM_ID)
+            if tContains(self.HEARTHSTONE_ITEM_ID, itemId) then
+                local castName = C_Item.GetItemNameByID(itemId)
                 table.insert(self.eligibleItems, castName)
             end
         end

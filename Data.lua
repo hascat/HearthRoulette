@@ -4,8 +4,12 @@ local addonName, addon = ...
 addon.MACRO_ICON_PATH = "Interface/icons/achievement_guildperk_hastyhearth.blp"
 addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
 
--- Item ID for the standard hearthstone item.
-addon.HEARTHSTONE_ITEM_ID = 6948
+-- Item ID numbers for the hearthstone and hearthstone-equivalent items.
+addon.HEARTHSTONE_ITEM_ID = {
+	6948, -- Hearthstone
+	28585, -- Ruby Slippers
+	142298, -- Astonishingly Scarlet Slippers
+}
 
 -- Toy ID numbers for the hearthstone-equivalent toys.
 addon.HEARTHSTONE_TOY_ID = {

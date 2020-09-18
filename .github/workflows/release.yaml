@@ -16,4 +16,4 @@ jobs:
       - name: Clone
         uses: actions/checkout@v2
       - name: Package and Release
-        run: BigWigsMods/packager@master
+        uses: BigWigsMods/packager@master

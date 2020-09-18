@@ -9,6 +9,9 @@ addon.HEARTHSTONE_ITEM_ID = 6948
 
 -- Toy ID numbers for the hearthstone-equivalent toys.
 addon.HEARTHSTONE_TOY_ID = {
+    54452, -- Ethereal Portal
+    64488, -- The Innkeeper's Daughter
+    93672, -- Dark Portal
     142542, -- Tome of Town Portal
     172179, -- Eternal Traveler's Hearthstone
     166747, -- Brewfest Reveler's Hearthstone

@@ -4,9 +4,9 @@ local events = CreateFrame("Frame", addonName .. "Events", UIParent)
 addon.events = events
 
 function events:OnEvent(event, ...)
-	if self[event] then
-		self[event](self, event, ...)
-	end
+    if self[event] then
+        self[event](self, event, ...)
+    end
 end
 
 events:SetScript("OnEvent", events.OnEvent)
@@ -14,11 +14,11 @@ events:RegisterEvent("ADDON_LOADED")
 
 -- Register events to ensure bad changes and toy changes are handled.
 function events:ADDON_LOADED(event, name)
-	if name ~= addonName then
-		return
-	end
+    if name ~= addonName then
+        return
+    end
 
-	self:UnregisterAllEvents()
+    self:UnregisterAllEvents()
 
     self:RegisterEvent("BAG_UPDATE")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")

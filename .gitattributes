@@ -1,3 +1,3 @@
-* text eol=auto
+* text eol=crlf
 *.blp binary
 *.xcf binary

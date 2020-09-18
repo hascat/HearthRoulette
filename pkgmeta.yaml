@@ -1,7 +1,7 @@
 enable-nolib-creation: no
 
 ignore:
-	- pkgmeta.yaml
+    - pkgmeta.yaml
     - assets/HearthRoulette.blp
     - assets/HearthRoulette.xcf
 

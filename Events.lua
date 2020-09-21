@@ -35,8 +35,8 @@ function events:BAG_UPDATE(event, bagId)
     addon:UpdateItems()
 end
 
--- Ensure the toys and items have been scanned when the player enters the world,
--- then update the chosen hearthstone.
+-- Ensure the toys, items, and spells have been scanned when the player enters
+-- the world, then update the chosen hearthstone.
 function events:PLAYER_ENTERING_WORLD(event)
     addon:UpdateAll()
 end
@@ -55,8 +55,8 @@ function events:TOYS_UPDATED(event, toyId, isNew, hasFanfare)
     addon:UpdateToys()
 end
 
--- Choose a new hearth while casting. This ensures cooldowns will be respected
--- once a hearth is used.
+-- Choose a new hearthstone while casting. This ensures cooldowns will be
+-- respected once a hearthstone is used.
 function events:SPELL_UPDATE_COOLDOWN()
     addon:ChooseHearth()
 end

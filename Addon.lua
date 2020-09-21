@@ -50,7 +50,8 @@ function addon:_SetMacro(body)
     end
 end
 
--- Update the set of hearth items and toys available, then choose a new hearth.
+-- Update the set of hearthstone toys, items and spells available, then choose a
+-- new hearthstone.
 function addon:UpdateAll()
     self:_UpdateToys()
     self:_UpdateSpells()
@@ -58,19 +59,19 @@ function addon:UpdateAll()
     self:ChooseHearth()
 end
 
--- Update the set of hearth items available, then choose a new hearth.
+-- Update the set of hearthstone items, then choose a new hearthstone.
 function addon:UpdateItems()
     self:_UpdateItems()
     self:ChooseHearth()
 end
 
--- Update the set of hearth toys available, then choose a new random hearth.
+-- Update the set of hearthstone spells, then choose a new hearthstone.
 function addon:UpdateSpells()
     self:_UpdateSpells()
     self:ChooseHearth()
 end
 
--- Update the set of hearth toys available, then choose a new random hearth.
+-- Update the set of hearthstone toys, then choose a new hearthstone.
 function addon:UpdateToys()
     self:_UpdateToys()
     self:ChooseHearth()
@@ -94,9 +95,7 @@ function addon:_UpdateItems()
     end
 end
 
--- Update the macro to use the given hearthstone toy or item. If the macro does
--- not yet exist, it will be created for the current character. If the player is
--- in combat, no action is taken.
+-- Update the macro to use the given hearthstone toy, item, or spell.
 function addon:_UpdateMacro(castName)
     if not castName then
         self:_SetMacro("/run print(\"No hearthstone or hearthstone-like toys found!\")")

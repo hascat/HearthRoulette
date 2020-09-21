@@ -6,6 +6,7 @@
 local addonName, addon = ...
 
 -- Initialize addon state.
+
 addon.eligibleItems = {}
 addon.eligibleSpells = {}
 addon.eligibleToys = {}
@@ -22,16 +23,18 @@ end
 -- Randomly choose a hearthstone from the lists of eligible toys, spells, and items. The
 -- chosen hearthstone will be used in the generated macro.
 function addon:ChooseHearth()
-    local castName = nil
     if #self.eligibleToys > 0 then
-        castName = RandomItem(self.eligibleToys)
+        self:_SetMacro("/cast " .. RandomItem(self.eligibleToys))
+        return
     elseif #self.eligibleSpells > 0 then
-        castName = RandomItem(self.eligibleSpells)
-    else
-        castName = RandomItem(self.eligibleItems)
+        self:_SetMacro("/cast " .. RandomItem(self.eligibleSpells))
+        return
+    elseif #self.eligibleItems > 0 then
+        self:_SetMacro("/cast " .. RandomItem(self.eligibleItems))
+        return
     end
 
-    self:_UpdateMacro(castName)
+    self:_SetMacro("/run print(\"No hearthstones found!\")")
 end
 
 -- Set the macro to have the given body. If the macro does not yet exist, it
@@ -92,15 +95,6 @@ function addon:_UpdateItems()
                 table.insert(self.eligibleItems, castName)
             end
         end
-    end
-end
-
--- Update the macro to use the given hearthstone toy, item, or spell.
-function addon:_UpdateMacro(castName)
-    if not castName then
-        self:_SetMacro("/run print(\"No hearthstone or hearthstone-like toys found!\")")
-    else
-        self:_SetMacro("/cast " .. castName)
     end
 end
 

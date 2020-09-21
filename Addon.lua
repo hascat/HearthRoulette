@@ -9,7 +9,6 @@ local addonName, addon = ...
 addon.eligibleItems = {}
 addon.eligibleSpells = {}
 addon.eligibleToys = {}
-addon.hasFavorites = false
 
 -- Return a random item from the given table, or nil if the table is empty.
 local function RandomItem(t)
@@ -119,18 +118,18 @@ end
 -- favorites, only the favorited toys will be included in the list.
 function addon:_UpdateToys()
     wipe(self.eligibleToys)
-    self.hasFavorites = false
+    local hasFavorites = false
 
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
         if PlayerHasToy(toyId) then
             local _, toyName, _, isFavorite, _, _ = C_ToyBox.GetToyInfo(toyId)
             if isFavorite then
-                if not self.hasFavorites then
+                if not hasFavorites then
                     wipe(self.eligibleToys)
-                    self.hasFavorites = true
+                    hasFavorites = true
                 end
                 table.insert(self.eligibleToys, toyName)
-            elseif not self.hasFavorites then
+            elseif not hasFavorites then
                 table.insert(self.eligibleToys, toyName)
             end
         end

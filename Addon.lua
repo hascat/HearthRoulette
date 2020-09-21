@@ -24,13 +24,19 @@ end
 -- chosen hearthstone will be used in the generated macro.
 function addon:ChooseHearth()
     if #self.eligibleToys > 0 then
-        self:_SetMacro("/cast " .. RandomItem(self.eligibleToys))
+        local toyId = RandomItem(self.eligibleToys)
+        local _, toyName, _, _, _, _ = C_ToyBox.GetToyInfo(toyId)
+        self:_SetMacro("/cast " .. toyName)
         return
     elseif #self.eligibleSpells > 0 then
-        self:_SetMacro("/cast " .. RandomItem(self.eligibleSpells))
+        local spellId = RandomItem(self.eligibleSpells)
+        local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
+        self:_SetMacro("/cast " .. spellName)
         return
     elseif #self.eligibleItems > 0 then
-        self:_SetMacro("/cast " .. RandomItem(self.eligibleItems))
+        local itemId = RandomItem(self.eligibleItems)
+        local itemName = C_Item.GetItemNameByID(itemId)
+        self:_SetMacro("/cast " .. itemName)
         return
     end
 
@@ -91,8 +97,7 @@ function addon:_UpdateItems()
         for slot = 1, GetContainerNumSlots(bagId) do
             local itemId = GetContainerItemID(bagId, slot)
             if tContains(self.HEARTHSTONE_ITEM_ID, itemId) then
-                local castName = C_Item.GetItemNameByID(itemId)
-                table.insert(self.eligibleItems, castName)
+                table.insert(self.eligibleItems, itemId)
             end
         end
     end
@@ -104,8 +109,7 @@ function addon:_UpdateSpells()
 
     for _, spellId in pairs(self.HEARTHSTONE_SPELL_ID) do
         if IsPlayerSpell(spellId) then
-            local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
-            table.insert(self.eligibleSpells, spellName)
+            table.insert(self.eligibleSpells, spellId)
         end
     end
 end
@@ -118,15 +122,15 @@ function addon:_UpdateToys()
 
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
         if PlayerHasToy(toyId) then
-            local _, toyName, _, isFavorite, _, _ = C_ToyBox.GetToyInfo(toyId)
+            local _, _, _, isFavorite, _, _ = C_ToyBox.GetToyInfo(toyId)
             if isFavorite then
                 if not hasFavorites then
                     wipe(self.eligibleToys)
                     hasFavorites = true
                 end
-                table.insert(self.eligibleToys, toyName)
+                table.insert(self.eligibleToys, toyId)
             elseif not hasFavorites then
-                table.insert(self.eligibleToys, toyName)
+                table.insert(self.eligibleToys, toyId)
             end
         end
     end

@@ -34,6 +34,22 @@ function addon:ChooseHearth()
     self:_UpdateMacro(castName)
 end
 
+-- Set the macro to have the given body. If the macro does not yet exist, it
+-- will be created for all characters. If the player is in combat, no action is
+-- taken.
+function addon:_SetMacro(body)
+    if InCombatLockdown() then
+        return
+    end
+
+    local name, _, _, _ = GetMacroInfo(addonName)
+    if not name then
+        CreateMacro(addonName, self.MACRO_ICON_ID, body, false)
+    else
+        EditMacro(addonName, addonName, self.MACRO_ICON_ID, body)
+    end
+end
+
 -- Update the set of hearth items and toys available, then choose a new hearth.
 function addon:UpdateAll()
     self:_UpdateToys()
@@ -82,23 +98,10 @@ end
 -- not yet exist, it will be created for the current character. If the player is
 -- in combat, no action is taken.
 function addon:_UpdateMacro(castName)
-    if InCombatLockdown() then
-        return
-    end
-
-    local name, _, _, _ = GetMacroInfo(addonName)
-
-    local body = nil
     if not castName then
-        body = "/run print(\"No hearthstone or hearthstone-like toys found!\")"
+        self:_SetMacro("/run print(\"No hearthstone or hearthstone-like toys found!\")")
     else
-        body = "/cast " .. castName
-    end
-
-    if not name then
-        CreateMacro(addonName, self.MACRO_ICON_ID, body, false)
-    else
-        EditMacro(addonName, addonName, self.MACRO_ICON_ID, body)
+        self:_SetMacro("/cast " .. castName)
     end
 end
 

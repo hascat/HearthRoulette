@@ -11,6 +11,27 @@ addon.eligibleItems = {}
 addon.eligibleSpells = {}
 addon.eligibleToys = {}
 
+-- Return true if the sum of the given start time and duration is in the
+-- future. If this check is performed while a spell is being case, the cooldown
+-- reported for the item or spell will be the remaining duration of the global
+-- cooldown. The duration is reduced by 1.5 seconds here to adjust for that.
+local function IsOnCooldown(start, duration)
+    local remainder = GetTime() - start
+    return remainder < (duration - 1.5)
+end
+
+-- Return true if the given item is on cooldown.
+local function IsItemOnCooldown(itemId)
+    local start, duration, _ = GetItemCooldown(itemId)
+    return IsOnCooldown(start, duration)
+end
+
+-- Return true if the given spell is on cooldown.
+local function IsSpellOnCooldown(spellId)
+    local start, duration, _, _ = GetSpellCooldown(spellId)
+    return IsOnCooldown(start, duration)
+end
+
 -- Return a random item from the given table, or nil if the table is empty.
 local function RandomItem(t)
     if #t > 0 then
@@ -20,27 +41,52 @@ local function RandomItem(t)
     end
 end
 
--- Randomly choose a hearthstone from the lists of eligible toys, spells, and items. The
--- chosen hearthstone will be used in the generated macro.
+-- Randomly choose a hearthstone from the lists of eligible toys, spells, and
+-- items. The chosen hearthstone will be used in the generated macro. If all
+-- hearthstones are on cooldown, set the macro to emit a message indicating
+-- that. If no hearthstones are available, set the macro to emit a message
+-- indicating that.
 function addon:ChooseHearth()
+    local cooldown = false
+
     if #self.eligibleToys > 0 then
-        local toyId = RandomItem(self.eligibleToys)
-        local _, toyName, _, _, _, _ = C_ToyBox.GetToyInfo(toyId)
-        self:_SetMacro("/cast " .. toyName)
-        return
-    elseif #self.eligibleSpells > 0 then
-        local spellId = RandomItem(self.eligibleSpells)
-        local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
-        self:_SetMacro("/cast " .. spellName)
-        return
-    elseif #self.eligibleItems > 0 then
-        local itemId = RandomItem(self.eligibleItems)
-        local itemName = C_Item.GetItemNameByID(itemId)
-        self:_SetMacro("/cast " .. itemName)
-        return
+        if not IsItemOnCooldown(self.eligibleToys[1]) then
+            local toyId = RandomItem(self.eligibleToys)
+            local _, toyName, _, _, _, _ = C_ToyBox.GetToyInfo(toyId)
+            self:_SetMacro("/cast " .. toyName)
+            return
+        else
+            cooldown = true
+        end
     end
 
-    self:_SetMacro("/run print(\"No hearthstones found!\")")
+    if #self.eligibleItems > 0 then
+        if not IsItemOnCooldown(self.eligibleItems[1]) then
+            local itemId = RandomItem(self.eligibleItems)
+            local itemName = C_Item.GetItemNameByID(itemId)
+            self:_SetMacro("/cast " .. itemName)
+            return
+        else
+            cooldown = true
+        end
+    end
+
+    if #self.eligibleSpells > 0 then
+        if not IsSpellOnCooldown(self.eligibleSpells[1]) then
+            local spellId = RandomItem(self.eligibleSpells)
+            local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
+            self:_SetMacro("/cast " .. spellName)
+            return
+        else
+            cooldown = true
+        end
+    end
+
+    if cooldown then
+        self:_SetMacro("/run print(\"All hearthstones on cooldown!\")")
+    else
+        self:_SetMacro("/run print(\"No hearthstones found!\")")
+    end
 end
 
 -- Set the macro to have the given body. If the macro does not yet exist, it

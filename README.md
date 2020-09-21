@@ -4,7 +4,12 @@ This addon creates a "HearthRoulette" macro which will use a random
 hearthstone-equivalent toy, spell, or item. The macro is updated with a new
 random selection each time it is used.
 
-## Toys
+## Selection Process
+
+The selection is made from the toys, items, and spells available to the player.
+Toys take precedence over items, which take precedence over spells.
+
+### Toys
 
 The random selection will be made from one of the following toys:
 
@@ -24,7 +29,7 @@ The random selection will be made from one of the following toys:
 If any of the above toys are marked as favorites, the random selection will be
 made only from those toys marked as favorites.
 
-## Items
+### Items
 
 If the player does not possess any of the above toys, the random selection will
 be made from one of the following items, if the player has them available:
@@ -33,17 +38,17 @@ be made from one of the following items, if the player has them available:
 - [Hearthstone](https://www.wowhead.com/item=6948/hearthstone)
 - [Ruby Slippers](https://www.wowhead.com/item=28585/ruby-slippers)
 
-## Spells
+### Spells
 
 If the player is a Shaman, the following spell will be cast if the all of the
 above are on cooldown or are unavailable:
 
 - [Astral Recall](https://www.wowhead.com/spell=556/astral-recall)
 
-# Contact
+## Contact
 
 Feel free to report issues or leave comments anywhere this addon can be found:
 
-- https://github.com/hascat/HearthRoulette
-- https://curseforge.com/wow/addons/hearthroulette
-- https://wowinterface.com/downloads/fileinfo.php?id=25681
+- [CurseForge](https://curseforge.com/wow/addons/hearthroulette)
+- [GitHub](https://github.com/hascat/HearthRoulette)
+- [WowInterface](https://wowinterface.com/downloads/fileinfo.php?id=25681)

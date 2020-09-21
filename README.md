@@ -22,21 +22,28 @@ The random selection will be made from one of the following toys:
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
 
 If any of the above toys are marked as favorites, the random selection will be
-made only from those toys.
-
-## Spells
-
-If the player does not possess any of the above toys and is a Shaman, the
-following spell will be cast:
-
-- [Astral Recall](https://www.wowhead.com/spell=556/astral-recall)
+made only from those toys marked as favorites.
 
 ## Items
 
-If the player does not possess any of the above toys and is not a Shaman, the
-random selection will be made from one of the following items, if the player has
-them available:
+If the player does not possess any of the above toys, the random selection will
+be made from one of the following items, if the player has them available:
 
 - [Astonishingly Scarlet Slippers](https://www.wowhead.com/item=142298/astonishingly-scarlet-slippers)
 - [Hearthstone](https://www.wowhead.com/item=6948/hearthstone)
 - [Ruby Slippers](https://www.wowhead.com/item=28585/ruby-slippers)
+
+## Spells
+
+If the player is a Shaman, the following spell will be cast if the all of the
+above are on cooldown or are unavailable:
+
+- [Astral Recall](https://www.wowhead.com/spell=556/astral-recall)
+
+# Contact
+
+Feel free to report issues or leave comments anywhere this addon can be found:
+
+- https://github.com/hascat/HearthRoulette
+- https://curseforge.com/wow/addons/hearthroulette
+- https://wowinterface.com/downloads/fileinfo.php?id=25681

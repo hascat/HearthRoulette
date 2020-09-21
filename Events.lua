@@ -24,7 +24,7 @@ function events:ADDON_LOADED(event, name)
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("SPELLS_CHANGED")
     self:RegisterEvent("TOYS_UPDATED")
-    self:RegisterEvent("UNIT_SPELLCAST_START")
+    self:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 end
 
 -- Look for hearthstone and hearthstone-equivalent items in the player's
@@ -55,10 +55,8 @@ function events:TOYS_UPDATED(event, toyId, isNew, hasFanfare)
     addon:UpdateToys()
 end
 
--- Choose a new hearthstone each time the player casts a spell. This ensures
--- repeated use of the macro results in randomly-chosen hearthstones.
-function events:UNIT_SPELLCAST_START(event, unitTarget, castGUID, spellId)
-    if unitTarget == "player" then
-        addon:ChooseHearth()
-    end
+-- Choose a new hearth while casting. This ensures cooldowns will be respected
+-- once a hearth is used.
+function events:SPELL_UPDATE_COOLDOWN()
+    addon:ChooseHearth()
 end

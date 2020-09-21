@@ -6,11 +6,14 @@
 ## X-Localizations: enUS
 
 ## Interface: 80300
-## Version: v0.6
+## Version: v0.6.1
 
 ## Author: Hascat
 ## X-Author-Server: US-Cairne
 ## X-Author-Faction: Horde
+
+## X-Curse-Project-ID: 385361
+## X-WoWI-ID: 25681
 
 ## DefaultState: Enabled
 ## LoadOnDemand: 0

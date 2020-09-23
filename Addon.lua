@@ -46,6 +46,10 @@ end
 -- hearthstones are on cooldown, set the macro to emit a message indicating
 -- that. If no hearthstones are available, set the macro to emit a message
 -- indicating that.
+--
+-- This function is sensitive to item cache information being available. The
+-- item cache may not be populated at login, causing item info queries to return
+-- nil values.
 function addon:ChooseHearth()
     local cooldown = false
 
@@ -53,8 +57,10 @@ function addon:ChooseHearth()
         if not IsItemOnCooldown(self.eligibleToys[1]) then
             local toyId = RandomItem(self.eligibleToys)
             local _, toyName, _, _, _, _ = C_ToyBox.GetToyInfo(toyId)
-            self:_SetMacro("/cast " .. toyName)
-            return
+            if toyName then
+                self:_SetMacro("/cast " .. toyName)
+                return
+            end
         else
             cooldown = true
         end
@@ -64,8 +70,10 @@ function addon:ChooseHearth()
         if not IsItemOnCooldown(self.eligibleItems[1]) then
             local itemId = RandomItem(self.eligibleItems)
             local itemName = C_Item.GetItemNameByID(itemId)
-            self:_SetMacro("/cast " .. itemName)
-            return
+            if itemName then
+                self:_SetMacro("/cast " .. itemName)
+                return
+            end
         else
             cooldown = true
         end

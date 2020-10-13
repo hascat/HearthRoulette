@@ -58,7 +58,7 @@ function addon:ChooseHearth()
             local toyId = RandomItem(self.eligibleToys)
             local _, toyName, _, _, _, _ = C_ToyBox.GetToyInfo(toyId)
             if toyName then
-                self:_SetMacro("#showtooltip \n/cast" .. toyName)
+                self:_SetMacro("#showtooltip\n/cast" .. toyName)
                 return
             end
         else
@@ -71,7 +71,7 @@ function addon:ChooseHearth()
             local itemId = RandomItem(self.eligibleItems)
             local itemName = C_Item.GetItemNameByID(itemId)
             if itemName then
-                self:_SetMacro("#showtooltip \n/cast" .. itemName)
+                self:_SetMacro("#showtooltip\n/cast" .. itemName)
                 return
             end
         else
@@ -83,7 +83,7 @@ function addon:ChooseHearth()
         if not IsSpellOnCooldown(self.eligibleSpells[1]) then
             local spellId = RandomItem(self.eligibleSpells)
             local spellName, _, _, _, _, _, _ = GetSpellInfo(spellId)
-            self:_SetMacro("#showtooltip \n/cast" .. spellName)
+            self:_SetMacro("#showtooltip\n/cast" .. spellName)
             return
         else
             cooldown = true

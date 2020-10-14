@@ -5,7 +5,7 @@
 ## X-Category: Miscellaneous
 ## X-Localizations: enUS
 
-## Interface: 80300
+## Interface: 90001
 ## Version: @project-version@
 
 ## Author: Hascat

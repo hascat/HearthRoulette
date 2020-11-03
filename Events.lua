@@ -12,7 +12,7 @@ end
 events:SetScript("OnEvent", events.OnEvent)
 events:RegisterEvent("ADDON_LOADED")
 
--- Register events to ensure bad changes and toy changes are handled.
+-- Register events to ensure bag changes and toy changes are handled.
 function events:ADDON_LOADED(event, name)
     if name ~= addonName then
         return

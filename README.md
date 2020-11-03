@@ -7,7 +7,8 @@ random selection each time it is used.
 ## Selection Process
 
 The selection is made from the toys, items, and spells available to the player.
-Toys take precedence over items, which take precedence over spells.
+The shortest cooldown of these groups will be preferred. If none of these are on
+cooldown, toys take precedence over items, which take precedence over spells.
 
 ### Toys
 

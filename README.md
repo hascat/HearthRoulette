@@ -21,10 +21,14 @@ The random selection will be made from one of the following toys:
 - [Greatfather Winter's Hearthstone](https://www.wowhead.com/item=162973/greatfather-winters-hearthstone)
 - [Headless Horseman's Hearthstone](https://www.wowhead.com/item=163045/headless-horsemans-hearthstone)
 - [Holographic Digitalization Hearthstone](https://www.wowhead.com/item=168907/holographic-digitalization-hearthstone)
+- [Kyrian Hearthstone](https://www.wowhead.com/item=184353/kyrian-hearthstone)
 - [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
+- [Necrolord Hearthstone](https://www.wowhead.com/item=182773/necrolord-hearthstone)
+- [Night Fae Hearthstone](https://www.wowhead.com/item=180290/night-fae-hearthstone)
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
+- [Venthyr Sinstone](https://www.wowhead.com/item=183716/venthyr-sinstone-wip)
 
 If any of the above toys are marked as favorites, the random selection will be
 made only from those toys marked as favorites.

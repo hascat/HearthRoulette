@@ -17,7 +17,7 @@ addon.HEARTHSTONE_TOY_ID = {
     64488, -- The Innkeeper's Daughter
     93672, -- Dark Portal
     142542, -- Tome of Town Portal
-    162793, -- Greatfather Winter's Hearthstone
+    162973, -- Greatfather Winter's Hearthstone
     163045, -- Headless Horseman's Hearthstone
     165669, -- Lunar Edler's Hearthstone
     165670, -- Peddlefeet's Lovely Hearthstone

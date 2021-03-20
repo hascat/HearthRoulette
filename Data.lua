@@ -26,10 +26,13 @@ addon.HEARTHSTONE_TOY_ID = {
     166747, -- Brewfest Reveler's Hearthstone
     168907, -- Holographic Digitalization Hearthstone
     172179, -- Eternal Traveler's Hearthstone
-    180290, -- Night Fae Hearthstone
-    182773, -- Necrolord Hearthstone
-    183716, -- Venthyr Sinstone
-    184353, -- Kyrian Hearthstone
+}
+
+addon.COVENANT_HEARTHSTONE_TOY_ID = {
+    [1] = 184353, -- Kyrian Hearthstone
+    [2] = 183716, -- Venthyr Sinstone
+    [3] = 180290, -- Night Fae Hearthstone
+    [4] = 182773, -- Necrolord Hearthstone
 }
 
 -- Spell ID numbers for hearthstone-equivalent spells.

@@ -5,6 +5,11 @@
 
 local addonName, addon = ...
 
+-- Grab references to oft-called WoW API functions to avoid a table lookup each time.
+local GetActiveCovenantID = C_Covenants.GetActiveCovenantID
+local GetToyInfo = C_ToyBox.GetToyInfo
+local GetItemNameByID = C_Item.GetItemNameByID
+
 -- Initialize addon state.
 
 addon.eligibleItems = {}
@@ -46,7 +51,7 @@ function addon:ChooseHearth()
 
     if #self.eligibleToys > 0 then
         local toyId = RandomItem(self.eligibleToys)
-        local toyName = select(2, C_ToyBox.GetToyInfo(toyId))
+        local toyName = select(2, GetToyInfo(toyId))
         if toyName then
             name = toyName
             cooldown = GetItemCooldownRemaining(toyId)
@@ -57,7 +62,7 @@ function addon:ChooseHearth()
         local itemId = RandomItem(self.eligibleItems)
         local itemCooldown = GetItemCooldownRemaining(itemId)
         if not cooldown or (itemCooldown < cooldown) then
-            local itemName = C_Item.GetItemNameByID(itemId)
+            local itemName = GetItemNameByID(itemId)
             if itemName then
                 name = itemName
                 cooldown = itemCooldown
@@ -160,17 +165,26 @@ function addon:_UpdateToys()
     local hasFavorites = false
 
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
-        if PlayerHasToy(toyId) then
-            local isFavorite = select(4, C_ToyBox.GetToyInfo(toyId))
-            if isFavorite then
-                if not hasFavorites then
-                    wipe(self.eligibleToys)
-                    hasFavorites = true
-                end
-                table.insert(self.eligibleToys, toyId)
-            elseif not hasFavorites then
-                table.insert(self.eligibleToys, toyId)
+        hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
+    end
+    local covenantId = GetActiveCovenantID()
+    if covenantId ~= 0 then
+        local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
+        self:_MaybeAddToy(toyId, hasFavorites)
+    end
+end
+
+function addon:_MaybeAddToy(toyId, hasFavorites)
+    if PlayerHasToy(toyId) then
+        local isFavorite = select(4, GetToyInfo(toyId))
+        if isFavorite then
+            if not hasFavorites then
+                wipe(self.eligibleToys)
+                hasFavorites = true
             end
+            table.insert(self.eligibleToys, toyId)
+        elseif not hasFavorites then
+            table.insert(self.eligibleToys, toyId)
         end
     end
 end

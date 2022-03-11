@@ -26,6 +26,7 @@ addon.HEARTHSTONE_TOY_ID = {
     166747, -- Brewfest Reveler's Hearthstone
     168907, -- Holographic Digitalization Hearthstone
     172179, -- Eternal Traveler's Hearthstone
+    188952, -- Dominated Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

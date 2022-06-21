@@ -27,6 +27,8 @@ addon.HEARTHSTONE_TOY_ID = {
     168907, -- Holographic Digitalization Hearthstone
     172179, -- Eternal Traveler's Hearthstone
     188952, -- Dominated Hearthstone
+    190237, -- Broker Translocation Matrix
+    193588, -- Timewalker's Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

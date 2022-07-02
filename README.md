@@ -15,6 +15,7 @@ cooldown, toys take precedence over items, which take precedence over spells.
 The random selection will be made from one of the following toys:
 
 - [Brewfest Reveler's Hearthstone](https://www.wowhead.com/item=166747/brewfest-revelers-hearthstone)
+- [Broker Translocation Matrix](https://www.wowhead.com/item=190237/broker-translocation-matrix)
 - [Dark Portal](https://www.wowhead.com/item=93672/dark-portal)
 - [Dominated Hearthstone](https://www.wowhead.com/item=188952/dominated-hearthstone)  
 - [Enlightened Hearthstone](https://www.wowhead.com/item=190196/enlightened-hearthstone)  

@@ -16,6 +16,8 @@ The random selection will be made from one of the following toys:
 
 - [Brewfest Reveler's Hearthstone](https://www.wowhead.com/item=166747/brewfest-revelers-hearthstone)
 - [Dark Portal](https://www.wowhead.com/item=93672/dark-portal)
+- [Dominated Hearthstone](https://www.wowhead.com/item=188952/dominated-hearthstone)  
+- [Enlightened Hearthstone](https://www.wowhead.com/item=190196/enlightened-hearthstone)  
 - [Eternal Traveler's Hearthstone](https://www.wowhead.com/item=172179/eternal-travelers-hearthstone)
 - [Ethereal Portal](https://www.wowhead.com/item=54452/ethereal-portal)
 - [Fire Eater's Hearthstone](https://www.wowhead.com/item=166746/fire-eaters-hearthstone)
@@ -25,6 +27,7 @@ The random selection will be made from one of the following toys:
 - [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
+- [Timewalker's Hearthstone](https://www.wowhead.com/item=193588/timewalkers-hearthstone)  
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
 
 In addition, if the player is pledged to one of the Shadowlands Covenants, the

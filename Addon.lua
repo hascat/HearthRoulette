@@ -167,12 +167,37 @@ function addon:_UpdateToys()
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
         hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
     end
-    local covenantId = GetActiveCovenantID()
-    if covenantId ~= 0 then
-        local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
-        self:_MaybeAddToy(toyId, hasFavorites)
+
+	-- Current covenant's toy is always usable by this character
+	local covenantId = GetActiveCovenantID()
+	if covenantId ~= 0 then
+		local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
+		self:_MaybeAddToy(toyId, hasFavorites)
+	end
+	
+	-- Toys from other covenants are only usable if a character on this account has
+	-- reached renown 80 with that covenant.
+	if self:_HasObtainedAchivement(self.KYRIAN_RENOWN_80_ACHIVEMENT) then
+		self:_MaybeAddToy(self.COVENANT_HEARTHSTONE_TOY_ID[1], hasFavorites)
+    end
+	
+	if self:_HasObtainedAchivement(self.VENTHYR_RENOWN_80_ACHIVEMENT) then
+		self:_MaybeAddToy(self.COVENANT_HEARTHSTONE_TOY_ID[2], hasFavorites)
+    end
+
+	if self:_HasObtainedAchivement(self.NIGHTFAE_RENOWN_80_ACHIVEMENT) then
+		self:_MaybeAddToy(self.COVENANT_HEARTHSTONE_TOY_ID[3], hasFavorites)
+    end
+
+	if self:_HasObtainedAchivement(self.NECROLORDS_RENOWN_80_ACHIVEMENT) then
+		self:_MaybeAddToy(self.COVENANT_HEARTHSTONE_TOY_ID[4], hasFavorites)
     end
 end
+
+function addon:_HasObtainedAchivement(achievementId)
+  local id, name, points, completed, month, day, year, description, flags, image, rewardtext, isGuild = GetAchievementInfo(achievementId)
+  return completed
+end  
 
 function addon:_MaybeAddToy(toyId, hasFavorites)
     if PlayerHasToy(toyId) then

@@ -5,8 +5,8 @@
 ## X-Category: Miscellaneous
 ## X-Localizations: enUS
 
-## Interface: 90100
-## Version: @project-version@
+## Interface: 90205
+## Version: v6
 
 ## Author: Hascat
 ## X-Author-Server: US-Cairne

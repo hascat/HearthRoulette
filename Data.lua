@@ -4,6 +4,13 @@ local addonName, addon = ...
 addon.MACRO_ICON_PATH = "Interface/icons/achievement_guildperk_hastyhearth.blp"
 addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
 
+-- Achiemvent IDs for reaching renown 80 with a given covenant.  
+-- Once obtained, cosmetics from this covenant are unlocked account-wide.
+addon.KYRIAN_RENOWN_80_ACHIVEMENT = 15242
+addon.NECROLORDS_RENOWN_80_ACHIVEMENT = 15243
+addon.NIGHTFAE_RENOWN_80_ACHIVEMENT = 15244
+addon.VENTHYR_RENOWN_80_ACHIVEMENT = 15245
+
 -- Item ID numbers for the hearthstone and hearthstone-equivalent items.
 addon.HEARTHSTONE_ITEM_ID = {
 	6948, -- Hearthstone

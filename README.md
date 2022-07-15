@@ -26,6 +26,11 @@ The random selection will be made from one of the following toys:
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
+- [Tome of Town Portal](https://www.wowhead.com/item=142542/tome-of-town-portal)
+- [Eternal Traveler's Hearthstone](https://www.wowhead.com/item=172179/eternal-travelers-hearthstone)
+- [Dominated Hearthstone](https://www.wowhead.com/item=188952/dominated-hearthstone)
+- [Broker Translocation Matrix](https://www.wowhead.com/item=190237/broker-translocation-matrix)
+- [Timewalker's Hearthstone](https://www.wowhead.com/item=193588/timewalkers-hearthstone)
 
 In addition, if the player is pledged to one of the Shadowlands Covenants, the
 covenant hearthstone toy (if owned) will be added to the set of toys to choose from:
@@ -34,6 +39,10 @@ covenant hearthstone toy (if owned) will be added to the set of toys to choose f
 - [Necrolord Hearthstone](https://www.wowhead.com/item=182773/necrolord-hearthstone)
 - [Night Fae Hearthstone](https://www.wowhead.com/item=180290/night-fae-hearthstone)
 - [Venthyr Sinstone](https://www.wowhead.com/item=183716/venthyr-sinstone-wip)
+
+If the player has unlocked Renown 80 with a covenant, that covenant's hearthstone 
+will be usable by any character regardless of current covenant, and so that toy will
+be added to the set of toys to choose from.
 
 If any of the above toys are marked as favorites, the random selection will be
 made only from those toys marked as favorites.

@@ -138,8 +138,8 @@ function addon:_UpdateItems()
     wipe(self.eligibleItems)
 
     for bagId = BACKPACK_CONTAINER, NUM_BAG_SLOTS do
-        for slot = 1, GetContainerNumSlots(bagId) do
-            local itemId = GetContainerItemID(bagId, slot)
+        for slot = 1, C_Container.GetContainerNumSlots(bagId) do
+            local itemId = C_Container.GetContainerItemID(bagId, slot)
             if tContains(self.HEARTHSTONE_ITEM_ID, itemId) then
                 table.insert(self.eligibleItems, itemId)
             end
@@ -167,7 +167,7 @@ function addon:_UpdateToys()
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
         hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
     end
-    local covenantId = GetActiveCovenantID()
+    local covenantId = C_Covenants.GetActiveCovenantID()
     if covenantId ~= 0 then
         local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
         self:_MaybeAddToy(toyId, hasFavorites)
@@ -176,7 +176,7 @@ end
 
 function addon:_MaybeAddToy(toyId, hasFavorites)
     if PlayerHasToy(toyId) then
-        local isFavorite = select(4, GetToyInfo(toyId))
+        local isFavorite = select(4, C_ToyBox.GetToyInfo(toyId))
         if isFavorite then
             if not hasFavorites then
                 wipe(self.eligibleToys)

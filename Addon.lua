@@ -161,12 +161,13 @@ end
 -- Build up a list of all known hearthstone toys. If any of these are marked as
 -- favorites, only the favorited toys will be included in the list.
 function addon:_UpdateToys()
-    wipe(self.eligibleToys)
+    table.wipe(self.eligibleToys)
     local hasFavorites = false
 
     for _, toyId in pairs(self.HEARTHSTONE_TOY_ID) do
         hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
     end
+
     local covenantId = C_Covenants.GetActiveCovenantID()
     if covenantId ~= 0 then
         local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
@@ -174,12 +175,21 @@ function addon:_UpdateToys()
     end
 end
 
+-- Add the to the list of eligible toys if the toy is not already in the list.
+-- The first time a toy marked as a favorite is seen, the table will be wiped
+-- before that toy is added to it. Only favorites will be added from then on.
+--
+-- Params:
+--     toyId: The ID of the toy to add.
+--     hasFavorites: True if a favorite has previously been added.
+-- Returns:
+--     True if a favorite was added.
 function addon:_MaybeAddToy(toyId, hasFavorites)
     if PlayerHasToy(toyId) then
         local isFavorite = select(4, C_ToyBox.GetToyInfo(toyId))
         if isFavorite then
             if not hasFavorites then
-                wipe(self.eligibleToys)
+                table.wipe(self.eligibleToys)
                 hasFavorites = true
             end
             table.insert(self.eligibleToys, toyId)
@@ -187,4 +197,6 @@ function addon:_MaybeAddToy(toyId, hasFavorites)
             table.insert(self.eligibleToys, toyId)
         end
     end
+
+    return hasFavorites
 end

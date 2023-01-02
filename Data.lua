@@ -29,6 +29,7 @@ addon.HEARTHSTONE_TOY_ID = {
     188952, -- Dominated Hearthstone
     190237, -- Broker Translocation Matrix
     193588, -- Timewalker's Hearthstone
+    200630, -- Ohn'ir Windsage's Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

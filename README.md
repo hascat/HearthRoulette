@@ -26,6 +26,7 @@ The random selection will be made from one of the following toys:
 - [Holographic Digitalization Hearthstone](https://www.wowhead.com/item=168907/holographic-digitalization-hearthstone)
 - [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
+- [Ohn'ir Windsage's Hearthstone](https://www.wowhead.com/item=200630/ohnir-windsages-hearthstone)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
 - [Timewalker's Hearthstone](https://www.wowhead.com/item=193588/timewalkers-hearthstone)
@@ -60,8 +61,6 @@ above are on cooldown or are unavailable:
 
 ## Contact
 
-Feel free to report issues or leave comments anywhere this addon can be found:
+Feel free to report issues or leave comments on Github:
 
-- [CurseForge](https://curseforge.com/wow/addons/hearthroulette)
 - [GitHub](https://github.com/hascat/HearthRoulette)
-- [WowInterface](https://wowinterface.com/downloads/fileinfo.php?id=25681)

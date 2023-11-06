@@ -30,6 +30,8 @@ addon.HEARTHSTONE_TOY_ID = {
     190237, -- Broker Translocation Matrix
     193588, -- Timewalker's Hearthstone
     200630, -- Ohn'ir Windsage's Hearthstone
+    206195, -- Path of the Naaru
+    208704, -- Deepdweller's Earth Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

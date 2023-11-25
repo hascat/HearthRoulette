@@ -24,6 +24,7 @@ The random selection will be made from one of the following toys:
 - [Fire Eater's Hearthstone](https://www.wowhead.com/item=166746/fire-eaters-hearthstone)
 - [Greatfather Winter's Hearthstone](https://www.wowhead.com/item=162973/greatfather-winters-hearthstone)
 - [Headless Horseman's Hearthstone](https://www.wowhead.com/item=163045/headless-horsemans-hearthstone)
+- [Hearthstone of the Flame](https://www.wowhead.com/item=209035/hearthstone-of-the-flame)
 - [Holographic Digitalization Hearthstone](https://www.wowhead.com/item=168907/holographic-digitalization-hearthstone)
 - [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)

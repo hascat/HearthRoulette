@@ -32,6 +32,7 @@ addon.HEARTHSTONE_TOY_ID = {
     200630, -- Ohn'ir Windsage's Hearthstone
     206195, -- Path of the Naaru
     208704, -- Deepdweller's Earth Hearthstone
+    209035, -- Hearthstone of the Flame
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

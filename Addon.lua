@@ -12,6 +12,8 @@ local GetItemNameByID = C_Item.GetItemNameByID
 
 -- Initialize addon state.
 
+addon.dalaranCast = ""
+addon.garrisonCast = ""
 addon.eligibleItems = {}
 addon.eligibleSpells = {}
 addon.eligibleToys = {}
@@ -81,7 +83,7 @@ function addon:ChooseHearth()
     end
 
     if name then
-        self:_SetMacro("#showtooltip\n/cast " .. name)
+        self:_SetMacro("#showtooltip\n/cast " .. self.dalaranCast .. self.garrisonCast .. name)
     else
         self:_SetMacro("/run print(\"No hearthstones found!\")")
     end
@@ -172,6 +174,20 @@ function addon:_UpdateToys()
     if covenantId ~= 0 then
         local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
         self:_MaybeAddToy(toyId, hasFavorites)
+    end
+
+    if PlayerHasToy(self.DALARAN_TOY_ID) then
+        local toyName = select(2, GetToyInfo(self.DALARAN_TOY_ID))
+        self.dalaranCast = "[mod:ctrl] " .. toyName .. "; "
+    else
+        self.dalaranCast = ""
+    end
+
+    if PlayerHasToy(self.GARRISON_TOY_ID) then
+        local toyName = select(2, GetToyInfo(self.GARRISON_TOY_ID))
+        self.garrisonCast = "[mod:shift] " .. toyName .. "; "
+    else
+        self.garrisonCast = ""
     end
 end
 

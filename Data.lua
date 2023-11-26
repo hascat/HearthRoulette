@@ -4,6 +4,12 @@ local addonName, addon = ...
 addon.MACRO_ICON_PATH = "Interface/icons/achievement_guildperk_hastyhearth.blp"
 addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
 
+-- Item ID for the Dalaran Hearthstone toy
+addon.DALARAN_TOY_ID = 140192
+
+-- Item ID for the Garrison Hearthstone toy
+addon.GARRISON_TOY_ID = 110560
+
 -- Item ID numbers for the hearthstone and hearthstone-equivalent items.
 addon.HEARTHSTONE_ITEM_ID = {
 	6948, -- Hearthstone

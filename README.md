@@ -1,8 +1,11 @@
 # HearthRoulette
 
 This addon creates a "HearthRoulette" macro which will use a random
-hearthstone-equivalent toy, spell, or item. The macro is updated with a new
-random selection each time it is used.
+hearthstone-equivalent toy, spell, or item.
+
+![Macros Window](/assets/MacrosWindow.png)
+
+The macro is updated with a new random selection each time it is used.
 
 ## Selection Process
 

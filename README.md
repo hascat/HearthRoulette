@@ -22,6 +22,7 @@ The random selection will be made from one of the following toys:
 - [Dark Portal](https://www.wowhead.com/item=93672/dark-portal)
 - [Deepdweller's Earthen Hearthstone](https://www.wowhead.com/item=208704/deepdwellers-earthen-hearthstone)
 - [Dominated Hearthstone](https://www.wowhead.com/item=188952/dominated-hearthstone)
+- [Enlightened Hearthstone](https://www.wowhead.com/item=190196/enlightened-hearthstone)
 - [Eternal Traveler's Hearthstone](https://www.wowhead.com/item=172179/eternal-travelers-hearthstone)
 - [Ethereal Portal](https://www.wowhead.com/item=54452/ethereal-portal)
 - [Fire Eater's Hearthstone](https://www.wowhead.com/item=166746/fire-eaters-hearthstone)

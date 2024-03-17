@@ -34,6 +34,7 @@ addon.HEARTHSTONE_TOY_ID = {
     206195, -- Path of the Naaru
     208704, -- Deepdweller's Earth Hearthstone
     209035, -- Hearthstone of the Flame
+    212337, -- Stone of the Hearth
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

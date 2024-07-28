@@ -4,6 +4,7 @@
 ## X-License: MIT
 ## X-Category: Miscellaneous
 ## X-Localizations: enUS
+## IconTexture: Interface/icons/achievement_guildperk_hastyhearth
 
 ## Interface: 110000
 ## Version: @project-version@

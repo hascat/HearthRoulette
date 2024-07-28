@@ -5,7 +5,7 @@
 ## X-Category: Miscellaneous
 ## X-Localizations: enUS
 
-## Interface: 100205
+## Interface: 110000
 ## Version: @project-version@
 
 ## Author: Hascat

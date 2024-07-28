@@ -18,7 +18,7 @@ addon.eligibleToys = {}
 
 -- Return the time the given item has left on cooldown, zero if none.
 local function GetItemCooldownRemaining(itemId)
-    local start, duration, _ = GetItemCooldown(itemId)
+    local start, duration, _ = C_Item.GetItemCooldown(itemId)
     return max(0, (start + duration) - GetTime())
 end
 

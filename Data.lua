@@ -44,6 +44,15 @@ addon.COVENANT_HEARTHSTONE_TOY_ID = {
     [4] = 182773, -- Necrolord Hearthstone
 }
 
+addon.RACIAL_HEARTHSTONE_TOY_ID = {
+	["Draenei"] = {
+        210455, -- Draenic Hologem
+    },
+	["LightforgedDraenei"] = {
+        210455, -- Draenic Hologem
+    },
+}
+
 -- Spell ID numbers for hearthstone-equivalent spells.
 addon.HEARTHSTONE_SPELL_ID = {
     556, -- Astral Recall

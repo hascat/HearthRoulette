@@ -24,8 +24,8 @@ end
 
 -- Return the time the given spell has left on cooldown, zero if none.
 local function GetSpellCooldownRemaining(spellId)
-    local start, duration, _, _ = GetSpellCooldown(spellId)
-    return max(0, (start + duration) - GetTime())
+    local info = C_Spell.GetSpellCooldown(spellId)
+    return max(0, (info.startTime + info.duration) - GetTime())
 end
 
 -- Return a random item from the given table, or nil if the table is empty.
@@ -72,7 +72,7 @@ function addon:ChooseHearth()
 
     if #self.eligibleSpells > 0 then
         local spellId = RandomItem(self.eligibleSpells)
-        local spellName = select(1, GetSpellInfo(spellId))
+        local spellName = C_Spell.GetSpellName(spellId)
         local spellCooldown = GetSpellCooldownRemaining(spellId)
         if not cooldown or (spellCooldown < cooldown) then
             name = spellName

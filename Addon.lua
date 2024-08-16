@@ -176,10 +176,12 @@ function addon:_UpdateToys()
 
     local _, race = UnitRace("player")
     local raceToys = self.RACIAL_HEARTHSTONE_TOY_ID[race]
-    for _, toyId in pairs(raceToys) do
-        hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
+    if raceToys then
+       for _, toyId in pairs(raceToys) do
+          hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
+       end
     end
-    
+
 end
 
 -- Add the to the list of eligible toys if the toy is not already in the list.

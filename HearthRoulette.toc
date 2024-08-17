@@ -6,7 +6,7 @@
 ## X-Localizations: enUS
 ## IconTexture: Interface/icons/achievement_guildperk_hastyhearth
 
-## Interface: 110000
+## Interface: 110002
 ## Version: @project-version@
 
 ## Author: Hascat

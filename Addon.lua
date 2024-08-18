@@ -87,11 +87,31 @@ function addon:ChooseHearth()
     end
 end
 
+-- Check if the Macro window is visible in the UI. The frame instance is created
+-- after the user opens the window from the game menu, so the existence of
+-- the frame needs to be checked prior to checking for visibility.
+local function IsMacroFrameVisible()
+    local macro_frame = _G["MacroFrame"]
+    if macro_frame then
+        return macro_frame:IsVisible()
+    else
+        return false
+    end
+end
+
+-- Check if the player and UI are in a state appropriate for updating the
+-- macro. Macros cannot be updated in combat. Macros should not be updated
+-- while the Macro window is open, as this will reset any changes the player
+-- has made to other macros.
+local function CannotSetMacro()
+    return InCombatLockdown() or IsMacroFrameVisible()
+end
+
 -- Set the macro to have the given body. If the macro does not yet exist, it
 -- will be created for all characters. If the player is in combat, no action is
 -- taken.
 function addon:_SetMacro(body)
-    if InCombatLockdown() then
+    if CannotSetMacro() then
         return
     end
 

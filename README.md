@@ -45,7 +45,7 @@ The random selection will be made from one of the following toys:
 
 ### Covenant Toys
 
-If the player is pledged to one of the Shadowlands Covenants, the covenant 
+If the player is pledged to one of the Shadowlands Covenants, the covenant
 hearthstone toy, if owned, will be added to the set of toys to choose from. If
 the player has reached renown 80 with a covenant, the covenant hearthstone toy
 will be available to all characters.
@@ -54,6 +54,13 @@ will be available to all characters.
 - [Necrolord Hearthstone](https://www.wowhead.com/item=182773/necrolord-hearthstone)
 - [Night Fae Hearthstone](https://www.wowhead.com/item=180290/night-fae-hearthstone)
 - [Venthyr Sinstone](https://www.wowhead.com/item=183716/venthyr-sinstone-wip)
+
+### Racial Toys
+
+Draenai and Lightforged Draenai characters can use this hearthstone toy specific
+to their race.
+
+- [Draenic Hologem](https://www.wowhead.com/item=210455/draenic-hologem)
 
 ### Items
 

@@ -3,9 +3,10 @@ local addonName, addon = ...
 local events = CreateFrame("Frame", addonName .. "Events", UIParent)
 addon.events = events
 
+-- Dispatch an event to an event handler, if one exists.
 function events:OnEvent(event, ...)
     if self[event] then
-        self[event](self, event, ...)
+        self[event](self, ...)
     end
 end
 
@@ -13,8 +14,8 @@ events:SetScript("OnEvent", events.OnEvent)
 events:RegisterEvent("ADDON_LOADED")
 
 -- Register events to ensure bag changes and toy changes are handled.
-function events:ADDON_LOADED(_, name)
-    if name ~= addonName then
+function events:ADDON_LOADED(...)
+    if select(1, ...) ~= addonName then
         return
     end
 
@@ -24,8 +25,8 @@ function events:ADDON_LOADED(_, name)
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("SPELLS_CHANGED")
-    self:RegisterEvent("SPELL_UPDATE_COOLDOWN")
     self:RegisterEvent("TOYS_UPDATED")
+    self:RegisterEvent("UNIT_SPELLCAST_SENT")
 end
 
 -- Look for hearthstone and hearthstone-equivalent items in the player's
@@ -57,8 +58,10 @@ end
 
 -- Choose a new hearthstone while casting. This ensures cooldowns will be
 -- respected once a hearthstone is used.
-function events:SPELL_UPDATE_COOLDOWN(...)
-    addon:ChooseHearth()
+function events:UNIT_SPELLCAST_SENT(...)
+    if select(1, ...) == "player" then
+        addon:ChooseHearth()
+    end
 end
 
 -- Look for hearthstone-equivalent toys in the player's toy collection, then

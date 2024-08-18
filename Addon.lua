@@ -91,9 +91,9 @@ end
 -- after the user opens the window from the game menu, so the existence of
 -- the frame needs to be checked prior to checking for visibility.
 local function IsMacroFrameVisible()
-    local macro_frame = _G["MacroFrame"]
-    if macro_frame then
-        return macro_frame:IsVisible()
+    local frame = _G["MacroFrame"]
+    if frame then
+        return frame:IsVisible()
     else
         return false
     end

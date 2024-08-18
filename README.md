@@ -43,8 +43,12 @@ The random selection will be made from one of the following toys:
 - [Timewalker's Hearthstone](https://www.wowhead.com/item=193588/timewalkers-hearthstone)
 - [Tome of Town Portal](https://www.wowhead.com/item=142542/tome-of-town-portal)
 
-In addition, if the player is pledged to one of the Shadowlands Covenants, the
-covenant hearthstone toy (if owned) will be added to the set of toys to choose from:
+### Covenant Toys
+
+If the player is pledged to one of the Shadowlands Covenants, the covenant 
+hearthstone toy, if owned, will be added to the set of toys to choose from. If
+the player has reached renown 80 with a covenant, the covenant hearthstone toy
+will be available to all characters.
 
 - [Kyrian Hearthstone](https://www.wowhead.com/item=184353/kyrian-hearthstone)
 - [Necrolord Hearthstone](https://www.wowhead.com/item=182773/necrolord-hearthstone)

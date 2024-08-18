@@ -44,6 +44,13 @@ addon.COVENANT_HEARTHSTONE_TOY_ID = {
     [4] = 182773, -- Necrolord Hearthstone
 }
 
+addon.COVENANT_RENOWNED_ACHIEVEMENT_ID = {
+    [1] = 15242, -- Renowned - Kyrian
+    [2] = 15245, -- Renowned - Venthyr
+    [3] = 15244, -- Renowned - Night Fae
+    [4] = 15243, -- Renowned - Necrolord
+}
+
 addon.RACIAL_HEARTHSTONE_TOY_ID = {
 	["Draenei"] = {
         210455, -- Draenic Hologem

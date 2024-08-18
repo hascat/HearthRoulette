@@ -178,6 +178,12 @@ function addon:_UpdateSpells()
     end
 end
 
+-- Return true if the player has completed the given achievement.
+local function HasCompletedAchievement(achievementId)
+    local completed, _ = select(4, GetAchievementInfo(achievementId))
+    return completed
+end
+
 -- Build up a list of all known hearthstone toys. If any of these are marked as
 -- favorites, only the favorited toys will be included in the list.
 function addon:_UpdateToys()
@@ -188,10 +194,13 @@ function addon:_UpdateToys()
         hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
     end
 
-    local covenantId = C_Covenants.GetActiveCovenantID()
-    if covenantId ~= 0 then
-        local toyId = self.COVENANT_HEARTHSTONE_TOY_ID[covenantId]
-        self:_MaybeAddToy(toyId, hasFavorites)
+    local activeCovenantId = C_Covenants.GetActiveCovenantID()
+    for covenantId, toyId in pairs(self.COVENANT_HEARTHSTONE_TOY_ID) do
+        local isActive = (covenantId == activeCovenantId)
+        local hasRenowned = HasCompletedAchievement(self.COVENANT_RENOWNED_ACHIEVEMENT_ID[covenantId])
+        if isActive or hasRenowned then
+            self:_MaybeAddToy(toyId, hasFavorites)
+        end
     end
 
     local _, race = UnitRace("player")

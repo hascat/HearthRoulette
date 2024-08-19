@@ -64,3 +64,10 @@ addon.RACIAL_HEARTHSTONE_TOY_ID = {
 addon.HEARTHSTONE_SPELL_ID = {
     556, -- Astral Recall
 }
+
+-- Item ID for the Dalaran Hearthstone toy
+addon.DALARAN_TOY_ID = 140192
+
+-- Item ID for the Garrison Hearthstone toy
+addon.GARRISON_TOY_ID = 110560
+

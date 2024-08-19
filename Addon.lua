@@ -12,6 +12,8 @@ local GetItemNameByID = C_Item.GetItemNameByID
 
 -- Initialize addon state.
 
+addon.dalaranMacroPart = ""
+addon.garrisonMacroPart = ""
 addon.eligibleItems = {}
 addon.eligibleSpells = {}
 addon.eligibleToys = {}
@@ -81,7 +83,7 @@ function addon:ChooseHearth()
     end
 
     if name then
-        self:_SetMacro("#showtooltip\n/cast " .. name)
+        self:_SetMacro("#showtooltip\n/cast " .. self.dalaranMacroPart .. self.garrisonMacroPart .. name)
     else
         self:_SetMacro("/run print(\"No hearthstones found!\")")
     end
@@ -127,6 +129,7 @@ end
 -- new hearthstone.
 function addon:UpdateAll()
     self:_UpdateToys()
+    self:_UpdateOtherToys()
     self:_UpdateSpells()
     self:_UpdateItems()
     self:ChooseHearth()
@@ -147,6 +150,7 @@ end
 -- Update the set of hearthstone toys, then choose a new hearthstone.
 function addon:UpdateToys()
     self:_UpdateToys()
+    self:_UpdateOtherToys()
     self:ChooseHearth()
 end
 
@@ -210,7 +214,27 @@ function addon:_UpdateToys()
           hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
        end
     end
+end
 
+-- Create a string to include a toy in the macro with the given modifier.
+-- If the player does not have the toy, or the name of the toy has not 
+-- yet been loaded, an empty string is returned.
+local function GetOtherToyMacroPart(toyId, modifier)
+    if PlayerHasToy(toyId) then
+        local toyName, _ = select(2, GetToyInfo(toyId))
+        if toyName then
+            return "[mod:" .. modifier .. "] " .. toyName .. "; "
+        end
+    end
+
+    return ""
+end
+
+-- Check if the player has the Dalaran or Garrison hearthstones. If so, store
+-- strings which can be included in the generated macro to make use of them.
+function addon:_UpdateOtherToys()
+    self.dalaranMacroPart = GetOtherToyMacroPart(self.DALARAN_TOY_ID, "ctrl")
+    self.garrisonMacroPart = GetOtherToyMacroPart(self.GARRISON_TOY_ID, "shift")
 end
 
 -- Add the to the list of eligible toys if the toy is not already in the list.
@@ -224,7 +248,7 @@ end
 --     True if a favorite was added.
 function addon:_MaybeAddToy(toyId, hasFavorites)
     if PlayerHasToy(toyId) then
-        local isFavorite = select(4, C_ToyBox.GetToyInfo(toyId))
+        local isFavorite = select(4, GetToyInfo(toyId))
         if isFavorite then
             if not hasFavorites then
                 table.wipe(self.eligibleToys)

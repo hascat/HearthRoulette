@@ -78,6 +78,14 @@ above are on cooldown or are unavailable:
 
 - [Astral Recall](https://www.wowhead.com/spell=556/astral-recall)
 
+## Other Destinations
+
+The macro will use the Dalaran hearthstone when `CTRL` is
+pressed, and the Garrison Hearthstone when `SHIFT` is pressed.
+
+- [Dalaran Hearthstone](https://www.wowhead.com/item=140192/dalaran-hearthstone)
+- [Garrison Hearthstone](https://www.wowhead.com/item=110560/garrison-hearthstone)
+
 ## Contact
 
 Feel free to report issues or leave comments on Github:

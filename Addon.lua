@@ -12,6 +12,7 @@ local GetItemNameByID = C_Item.GetItemNameByID
 
 -- Initialize addon state.
 
+addon.chooseTimer = nil
 addon.dalaranMacroPart = ""
 addon.garrisonMacroPart = ""
 addon.eligibleItems = {}
@@ -87,6 +88,13 @@ function addon:ChooseHearth()
     else
         self:_SetMacro("/run print(\"No hearthstones found!\")")
     end
+end
+
+function addon:ChooseHearthLater()
+    if self.chooseTimer then
+        self.chooseTimer:Cancel()
+    end
+    self.chooseTimer = C_Timer.NewTimer(1, function() addon:ChooseHearth() end)
 end
 
 -- Check if the Macro window is visible in the UI. The frame instance is created

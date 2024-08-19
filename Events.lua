@@ -40,7 +40,7 @@ end
 -- Choose a new hearthstone when the item info cache has been updated. Item info
 -- queries performed by ChooseHearth may fail before this event is triggered.
 function events:GET_ITEM_INFO_RECEIVED(...)
-    addon:ChooseHearth()
+    addon:ChooseHearthLater()
 end
 
 -- Ensure the toys, items, and spells have been scanned when the player enters

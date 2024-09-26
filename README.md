@@ -35,6 +35,7 @@ The random selection will be made from one of the following toys:
 - [Holographic Digitalization Hearthstone](https://www.wowhead.com/item=168907/holographic-digitalization-hearthstone)
 - [Lunar Elder's Hearthstone](https://www.wowhead.com/item=165669/lunar-elders-hearthstone)
 - [Noble Gardener's Hearthstone](https://www.wowhead.com/item=165802/noble-gardeners-hearthstone)
+- [Notorious Thread's Hearthstone](https://www.wowhead.com/item=228940/notorious-threads-hearthstone)
 - [Ohn'ir Windsage's Hearthstone](https://www.wowhead.com/item=200630/ohnir-windsages-hearthstone)
 - [Path of the Naaru](https://www.wowhead.com/item=206195/path-of-the-naaru)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)

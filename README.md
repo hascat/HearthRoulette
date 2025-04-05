@@ -28,6 +28,7 @@ The random selection will be made from one of the following toys:
 - [Enlightened Hearthstone](https://www.wowhead.com/item=190196/enlightened-hearthstone)
 - [Eternal Traveler's Hearthstone](https://www.wowhead.com/item=172179/eternal-travelers-hearthstone)
 - [Ethereal Portal](https://www.wowhead.com/item=54452/ethereal-portal)
+- [Explosive Hearthstone](https://www.wowhead.com/item=236687/explosive-hearthstone)
 - [Fire Eater's Hearthstone](https://www.wowhead.com/item=166746/fire-eaters-hearthstone)
 - [Greatfather Winter's Hearthstone](https://www.wowhead.com/item=162973/greatfather-winters-hearthstone)
 - [Headless Horseman's Hearthstone](https://www.wowhead.com/item=163045/headless-horsemans-hearthstone)

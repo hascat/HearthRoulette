@@ -206,7 +206,7 @@ function addon:_UpdateToys()
         hasFavorites = self:_MaybeAddToy(toyId, hasFavorites)
     end
 
-    local activeCovenantId = C_Covenants.GetActiveCovenantID()
+    local activeCovenantId = GetActiveCovenantID()
     for covenantId, toyId in pairs(self.COVENANT_HEARTHSTONE_TOY_ID) do
         local isActive = (covenantId == activeCovenantId)
         local hasRenowned = HasCompletedAchievement(self.COVENANT_RENOWNED_ACHIEVEMENT_ID[covenantId])

@@ -40,6 +40,7 @@ The random selection will be made from one of the following toys:
 - [Ohn'ir Windsage's Hearthstone](https://www.wowhead.com/item=200630/ohnir-windsages-hearthstone)
 - [Path of the Naaru](https://www.wowhead.com/item=206195/path-of-the-naaru)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
+- [Redeployment Module](https://www.wowhead.com/item=235016/redeployment-module)
 - [Stone of the Hearth](https://www.wowhead.com/item=212337/stone-of-the-hearth)
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)
 - [Timewalker's Hearthstone](https://www.wowhead.com/item=193588/timewalkers-hearthstone)

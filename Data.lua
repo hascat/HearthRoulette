@@ -37,6 +37,7 @@ addon.HEARTHSTONE_TOY_ID = {
     212337, -- Stone of the Hearth
     228940, -- Notorious Thread's Hearthstone
     236687, -- Explosive Hearthstone
+    235016, -- Redeployment Module
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {

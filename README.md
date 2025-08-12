@@ -22,6 +22,7 @@ The random selection will be made from one of the following toys:
 
 - [Brewfest Reveler's Hearthstone](https://www.wowhead.com/item=166747/brewfest-revelers-hearthstone)
 - [Broker Translocation Matrix](https://www.wowhead.com/item=190237/broker-translocation-matrix)
+- [Cosmic Hearthstone](https://www.wowhead.com/ptr-2/item=246565/cosmic-hearthstone)
 - [Dark Portal](https://www.wowhead.com/item=93672/dark-portal)
 - [Deepdweller's Earthen Hearthstone](https://www.wowhead.com/item=208704/deepdwellers-earthen-hearthstone)
 - [Dominated Hearthstone](https://www.wowhead.com/item=188952/dominated-hearthstone)
@@ -40,6 +41,7 @@ The random selection will be made from one of the following toys:
 - [Ohn'ir Windsage's Hearthstone](https://www.wowhead.com/item=200630/ohnir-windsages-hearthstone)
 - [Path of the Naaru](https://www.wowhead.com/item=206195/path-of-the-naaru)
 - [Peddlefeet's Lovely Hearthstone](https://www.wowhead.com/item=165670/peddlefeets-lovely-hearthstone)
+- [P.O.S.T. Master's Express Hearthstone](https://www.wowhead.com/ptr-2/item=245970/p-o-s-t-masters-express-hearthstone)
 - [Redeployment Module](https://www.wowhead.com/item=235016/redeployment-module)
 - [Stone of the Hearth](https://www.wowhead.com/item=212337/stone-of-the-hearth)
 - [The Innkeeper's Daughter](https://www.wowhead.com/item=64488/the-innkeepers-daughter)

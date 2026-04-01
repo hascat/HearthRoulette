@@ -40,6 +40,9 @@ addon.HEARTHSTONE_TOY_ID = {
     235016, -- Redeployment Module
     245970, -- P.O.S.T. Master's Express Hearthstone
     246565, -- Costmic Hearthstone
+    257736, -- Lightcalled Hearthstone
+    265100, -- Corewarden's Hearthstone
+    263933, -- Preyseeker's Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {
@@ -75,4 +78,3 @@ addon.DALARAN_TOY_ID = 140192
 
 -- Item ID for the Garrison Hearthstone toy
 addon.GARRISON_TOY_ID = 110560
-

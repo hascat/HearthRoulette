@@ -1,8 +1,7 @@
 local addonName, addon = ...
 
 -- Path to the icon to use for the macro.
-addon.MACRO_ICON_PATH = "Interface/icons/achievement_guildperk_hastyhearth.blp"
-addon.MACRO_ICON_ID = GetFileIDFromPath(addon.MACRO_ICON_PATH)
+addon.MACRO_ICON_ID = "INV_Misc_QuestionMark"
 
 -- Item ID numbers for the hearthstone and hearthstone-equivalent items.
 addon.HEARTHSTONE_ITEM_ID = {

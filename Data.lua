@@ -19,7 +19,7 @@ addon.HEARTHSTONE_TOY_ID = {
     142542, -- Tome of Town Portal
     162973, -- Greatfather Winter's Hearthstone
     163045, -- Headless Horseman's Hearthstone
-    165669, -- Lunar Edler's Hearthstone
+    165669, -- Lunar Elder's Hearthstone
     165670, -- Peddlefeet's Lovely Hearthstone
     165802, -- Noble Gardener's Hearthstone
     166746, -- Fire Eater's Hearthstone
@@ -39,10 +39,12 @@ addon.HEARTHSTONE_TOY_ID = {
     236687, -- Explosive Hearthstone
     235016, -- Redeployment Module
     245970, -- P.O.S.T. Master's Express Hearthstone
-    246565, -- Costmic Hearthstone
+    246565, -- Cosmic Hearthstone
     257736, -- Lightcalled Hearthstone
     265100, -- Corewarden's Hearthstone
     263933, -- Preyseeker's Hearthstone
+    264367, -- Mycomancer's Hearthspore
+    281136, -- Hiveborne Hearthstone
 }
 
 addon.COVENANT_HEARTHSTONE_TOY_ID = {
